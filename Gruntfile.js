@@ -6,11 +6,11 @@ module.exports = function(grunt) {
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
     clean: {
-      public: ['public'],
+      build: ['build'],
     },
     'gh-pages': {
       options: {
-        base: 'public',
+        base: 'build',
         branch: 'master'
       },
       src: ['**']
@@ -21,7 +21,7 @@ module.exports = function(grunt) {
           expand: true,
           cwd: 'src/js',
           src: ['**/*.js'],
-          dest: 'public/js'
+          dest: 'build/js'
         }]
       },
       html: {
@@ -29,7 +29,7 @@ module.exports = function(grunt) {
           expand: true,
           cwd: 'src/html',
           src: ['**/*.html'],
-          dest: 'public/'
+          dest: 'build/'
         }]
       },
       img: {
@@ -37,7 +37,7 @@ module.exports = function(grunt) {
           expand: true,
           cwd: 'src',
           src: ['img/**'],
-          dest: 'public/'
+          dest: 'build/'
         }]
       },
     },
@@ -68,12 +68,12 @@ module.exports = function(grunt) {
     },
 
     sass: {
-      public: {
+      dev: {
         options: {
           style: 'expanded'
         },
         files: {
-          'public/css/styles.css': 'src/sass/styles.scss'
+          'build/css/styles.css': 'src/sass/styles.scss'
         }
       }
     },
@@ -89,7 +89,7 @@ module.exports = function(grunt) {
           // This will be removed later as `watch` will take care of that
           // keepalive: true,
 
-          base: './public',
+          base: './build',
 
         }
       }
@@ -130,5 +130,5 @@ module.exports = function(grunt) {
 
   grunt.registerTask('build', ['sass', 'copy']);
   grunt.registerTask('rebuild', ['clean', 'build']);
-  grunt.registerTask('deploy', ['clean', 'build']);
+  grunt.registerTask('deploy', ['build', 'gh-pages']);
 };
