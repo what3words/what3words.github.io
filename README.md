@@ -1,7 +1,9 @@
 # what3words.github.io
 
+Sources for https://what3words.github.io
+
 ## Contributing
-Anyone and everyone is welcome to contribute adding what3words API wrapper, code libraries or snippet.
+Anyone and everyone is welcome to contribute adding what3words API wrappers, code libraries or snippets.
 
 1. Fork it (https://github.com/what3words/what3words.github.io and click "Fork")
 2. Create your feature branch (`git checkout -b my-new-feature`)
@@ -28,7 +30,7 @@ $ grunt build
 ```
 
 ### Deploy on `gh-pages`
-
+This task is available only for what3words' github organisation's members
 ```sh
 $ grunt deploy
 ```
