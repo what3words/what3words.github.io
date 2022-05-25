@@ -25,7 +25,7 @@
   "homepage": "https://github.com/what3words/what3words.github.io#readme",
   "devDependencies": {
     "connect-livereload": "^0.6.0",
-    "grunt": "^1.0.1",
+    "grunt": "^1.5.3",
     "grunt-contrib-clean": "^1.0.0",
     "grunt-contrib-connect": "^1.0.2",
     "grunt-contrib-copy": "^1.0.0",
